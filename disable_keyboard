@@ -1,0 +1,25 @@
+import time
+import msvcrt
+
+
+class KeyboardDisable:
+
+    def start(self):
+        self.on = True
+
+    def stop(self):
+
+    def __call__(self):
+        while self.on:
+            msvcrt.getwch()
+
+
+    def __init__(self):
+        self.on = False
+
+
+
+disable = KeyboardDisable()
+disable.start()
+time.sleep(.5)
+disable.stop()
