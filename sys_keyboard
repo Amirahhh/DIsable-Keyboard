@@ -1,0 +1,16 @@
+import keyboard
+import time
+import schedule
+
+
+def user_input():
+    ans = input("Enter your user input: ")
+    return ans
+
+# Runs the function user_input every (2) seconds
+schedule.every(2).seconds.do(user_input)
+
+# will ensure code continues to run indefinitely
+while 1:
+    schedule.run_pending()
+    time.sleep(1)
